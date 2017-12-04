@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        function validate()
+        {
+            var password=document.myForm.password.value;
+            var confirmPass=document.myForm.confPass.value;
+            if(password!=confirmPass)
+                alert("Password doesn't match");
+          }
+    </script>
+
+</head>
+<body>
+<div class="form-group col-lg-4 col-lg-offset-4">
+<form name="myForm" onsubmit="validate()">
+    <label for="Name">Name</label>
+    <div class="container">
+        <div class="row">
+    <div id="Name">
+        <div class="col-lg-2"><input type="text" class="form-control" id="firstName" placeholder="First" pattern="[a-zA-Z]{1,}" required></div>
+        <div class="col-lg-2"><input type="text" class="form-control" id="lastName" placeholder="Last" pattern="[a-zA-Z]{1,}" required></div>
+    </div>
+        </div>
+    </div>
+    <label for="userName">Choose your username</label>
+    <input type="text" id="userName" class="form-control" required>
+    <label for="password">Create a password</label>
+    <input type="password" id="password" class="form-control" required>
+    <label for="confPass">Confirm your password</label>
+    <input type="password" id="confPass" required class="form-control" onchange="validate()">
+    <label for="birthday">Birthday</label>
+    <input type="date" id="birthday" class="form-control" required>
+    <label for="gender">Gender</label>
+    <select id="gender" required class="form-control">
+        <option value="">I am...</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Other">Other</option>
+    </select>
+    <label for="phone">Mobile Phone</label>
+    <input type="text" id="phone" class="form-control" pattern="[1-9][0-9]{9}" required>
+    <label for="currEmail">Your Current Email Address</label>
+    <input type="email" id="currEmail" class="form-control" required>
+    <label for="location">Location</label>
+    <select id="location" required class="form-control">
+        <option value="">I am from...</option>
+        <option value="India">India</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States">United States</option>
+        <option value="Australia">Australia</option>
+    </select>
+    <input type="submit" id="submit" class="form-control btn-success" value="Sign Up">
+</form>
+</div>
+</body>
+</html>
